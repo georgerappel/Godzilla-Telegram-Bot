@@ -1,0 +1,16 @@
+{
+  "name": "nanozillabot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A simple private Telegram bot.",
+  "readmeFilename": "README.md",
+  "author": "George Rappel <george.concei@hotmail.com>",
+  "engine": "node >= 0.12.4",
+  "dependencies": {
+    "node-telegram-bot": "0.1.9",
+    "node-osc": "2.10.1",
+    "express": "~3.3.4",
+    "socket.io": "~0.9.16",
+    "jade": "~0.34.1"
+  }
+}
