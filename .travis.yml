@@ -13,4 +13,4 @@ script:
   - docker run -e TEST=true -e TELEGRAM_TOKEN=$TELEGRAM_TOKEN -e TELEGRAM_ANALYTICS=$TELEGRAM_ANALYTICS $DOCKER_IMAGE_NAME
 
 env:
- - DOCKER_IMAGE_NAME=georgerappel/Godzilla-Telegram-Bot
+ - DOCKER_IMAGE_NAME=georgerappel/godzilla-telegram-bot
