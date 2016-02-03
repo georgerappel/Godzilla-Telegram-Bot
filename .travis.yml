@@ -7,7 +7,10 @@ services:
 
 before_install:
   - docker login --email=$DOCKER_EMAIL --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
-  - docker build -t georgerappel/godzilla-bot .
+  - docker build -t $DOCKER_IMAGE_NAME .
 
 script:
-  - docker run -e TELEGRAM_TOKEN=$TELEGRAM_TOKEN -e TELEGRAM_ANALYTICS=$TELEGRAM_ANALYTICS georgerappel/godzilla-bot
+  - docker run -e TEST=true -e TELEGRAM_TOKEN=$TELEGRAM_TOKEN -e TELEGRAM_ANALYTICS=$TELEGRAM_ANALYTICS $DOCKER_IMAGE_NAME
+
+env:
+ - DOCKER_IMAGE_NAME=georgerappel/Godzilla-Telegram-Bot

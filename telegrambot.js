@@ -15,6 +15,10 @@ function start() {
 		  throw new Error('Telegram error:', message);
 	  })
 	  .start();
+	if(process.env.TEST){
+		handleMessage("/god");
+		process.exit();
+	}
 }
 
 function handleMessage(message) {
