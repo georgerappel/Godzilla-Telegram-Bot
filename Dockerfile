@@ -1,20 +1,17 @@
-FROM ubuntu:14.04
+FROM ubuntu
+MAINTAINER George Rappel <george.concei@hotmail.com>
 
+WORKDIR /src
+
+RUN apt-get install -y software-properties-common python
+RUN add-apt-repository ppa:chris-lea/node.js
+RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y curl
+RUN apt-get install -y nodejs
 
-# Note the new setup script name for Node.js v0.12
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+ADD [^.]* /src/
+ADD ./commands /src/commands
 
-# Then install with:
-RUN sudo apt-get install -y nodejs  
+RUN npm install /src/
 
-# Install app dependencies
-COPY package.json /src/package.json
-RUN cd /src; npm install
-
-# Bundle app source
-COPY . /src
-
-#EXPOSE  8080
-CMD ["node", "/src/app.js"]
+CMD ["/usr/bin/node", "/src/app.js"]
