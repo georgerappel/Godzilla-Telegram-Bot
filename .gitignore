@@ -1,6 +1,4 @@
-node_modules/
-
--secreto.txt
+./node_modules
 
 # =========================
 # Operating System Files
