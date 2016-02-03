@@ -3,6 +3,7 @@ var quietList = '';
 
 var Bot = require('node-telegram-bot');
 var bot;
+var testAnswer;
 
 function start() {
 	bot= new Bot({
@@ -16,7 +17,10 @@ function start() {
 	  })
 	  .start();
 	if(process.env.TEST){
+		testAnswer = "";
 		handleMessage("/god");
+		handleMessage("/isdhisdd"); // Random command to test if it will get stuck
+		handleMessage("asnd /god");
 		process.exit();
 	}
 }
@@ -57,7 +61,7 @@ function handleMessage(message) {
 	} else if (message && message.text && (message.text.toLowerCase().indexOf("@nanozilla_bot") || message.text.toLowerCase().indexOf("Godzilla")) ){
 		console.log("Fui citado");
 
-	}
+	}///
 }
 
 function sendMessage(destination, text) {
