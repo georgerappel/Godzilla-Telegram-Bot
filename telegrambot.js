@@ -58,10 +58,10 @@ function handleMessage(message) {
 				console.log(e);
 			}
 		}
-	} else if (message && message.text && (message.text.toLowerCase().indexOf("@nanozilla_bot") || message.text.toLowerCase().indexOf("Godzilla")) ){
+	} else if (message && message.text && (message.text.toLowerCase().indexOf("@nanozilla_bot") || message.text.toLowerCase().indexOf("godzilla")) ){
 		console.log("Fui citado");
 
-	}///
+	}
 }
 
 function sendMessage(destination, text) {
