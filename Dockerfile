@@ -1,5 +1,5 @@
 FROM node:0.12-wheezy
-MAINTAINER George Rappel <george.concei@hotmail.com
+MAINTAINER George Rappel
 EXPOSE 8080
 ADD . /app
 WORKDIR /app
